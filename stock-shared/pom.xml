@@ -2,18 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>stock-market-spring-stream-cloud</artifactId>
+        <groupId>com.quipu</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.quipu</groupId>
-    <artifactId>stock-market-spring-stream-cloud</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>stock-consumer</module>
-        <module>stock-producer</module>
-        <module>stock-shared</module>
-    </modules>
+    <artifactId>stock-shared</artifactId>
 
 
 </project>

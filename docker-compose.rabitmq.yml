@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  stock-market-rabbitmq:
+    image: rabbitmq:3-management
+    container_name: stock-market-rabitmq
+    ports:
+      - 15672:15672
+      - 5672:5672
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
