@@ -1,8 +1,6 @@
 package com.quipu.stockproducer;
 
 import com.quipu.shared.StockPrice;
-import org.springframework.cloud.stream.messaging.Source;
-import org.springframework.messaging.support.GenericMessage;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,15 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 class StockController {
 
-    private final Source source;
+    private final CreateStockService createStockService;
 
-    StockController(Source source) {
-        this.source = source;
+    StockController(CreateStockService createStockService) {
+        this.createStockService = createStockService;
     }
 
     @PostMapping(name = "/api/stock")
     void createStock(@RequestBody StockPrice stockPrice) {
-        source.output().send(new GenericMessage<>(stockPrice));
+        createStockService.create(stockPrice);
     }
 
 }
